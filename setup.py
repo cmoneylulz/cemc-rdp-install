@@ -18,10 +18,6 @@ def run_cmd(commands, user_input = ''):
 commands = ['cp', 'cemc.remmina', '../cemc.remmina']
 run_cmd(commands)
 
-#cat ../cemc.remmina
-commands = ['cat', '../cemc.remmina']
-run_cmd(commands)
-
 #cp cemc-rdp.conf ../.config/upstart/cemc-rdp.conf
 commands = ['cp', 'cemc-rdp.conf', '../.config/upstart/cemc-rdp.conf']
 run_cmd(commands)
@@ -62,6 +58,9 @@ run_cmd(commands)
 commands = ['chmod', '+x', '../Desktop/cemc.desktop']
 run_cmd(commands)
 
+#prompt before restart
+pointless = raw_input("SETUP IS COMPLETE PRESS ENTER TO BREAK EVERYTHING")
+
 #sudo reboot
-#commands = ['sudo', 'reboot']
-#run_cmd(commands)
+commands = ['sudo', 'reboot']
+run_cmd(commands)
