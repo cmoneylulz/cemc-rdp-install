@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=x.y
+Name=RemoteDesktop
+Comment=CEMC RDP Launcher
+Exec=~/cemc-rdp.sh
+Icon=~/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;
