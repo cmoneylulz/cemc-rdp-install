@@ -1,9 +1,7 @@
 [Desktop Entry]
-Version=x.y
-Name=RemoteDesktop
-Comment=CEMC RDP Launcher
-Exec=~/cemc-rdp.sh
-Icon=~/icon.png
-Terminal=false
 Type=Application
-Categories=Utility;Application;
+Name=Remote Desktop
+Comment=who comments on a desktop shortcut
+Terminal=false
+Exec=/home/guineapig/cemc-rdp.sh
+Icon=/home/guineapig/icon.png

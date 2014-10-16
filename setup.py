@@ -30,12 +30,38 @@ run_cmd(commands)
 commands = ['cp', 'cemc-rdp.sh', '../cemc-rdp.sh']
 run_cmd(commands)
 
-#chmod +x ../cemc-rdp.sh
-commands = ['sudo', 'chmox', '+x', '../cemc-rdp.sh']
+#cp icon.png ../icon.png
+commands = ['cp', 'icon.png', '../icon.png']
 run_cmd(commands)
 
+#chmod +x ../cemc-rdp.sh
+commands = ['sudo', 'chmod', '+x', '../cemc-rdp.sh']
+run_cmd(commands)
 
+#create absolute path for desktop shortcut
+shortcut_path = 'Exec=/home/' + os.environ['USER'] + '/cemc-rdp.sh\n'
+icon_path = 'Icon=/home/' + os.environ['USER'] + '/icon.png\n'
+
+#generate icon
+os.remove('cemc.desktop')
+desktop_file = open('cemc.desktop', 'a')
+desktop_file.write('[Desktop Entry]\n')
+desktop_file.write('Type=Application\n')
+desktop_file.write('Name=Remote Desktop\n')
+desktop_file.write('Comment=who comments on a desktop shortcut\n')
+desktop_file.write('Terminal=false\n')
+desktop_file.write(shortcut_path)
+desktop_file.write(icon_path)
+desktop_file.close()
+
+#cp cemc.desktop ../Desktop/cemc.desktop
+commands = ['cp', 'cemc.desktop', '../Desktop/cemc.desktop']
+run_cmd(commands)
+
+#chmod +x ../Desktop/cemc.desktop
+commands = ['chmod', '+x', '../Desktop/cemc.desktop']
+run_cmd(commands)
 
 #sudo reboot
-commands = ['sudo', 'reboot']
-run_cmd(commands)
+#commands = ['sudo', 'reboot']
+#run_cmd(commands)
