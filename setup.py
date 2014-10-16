@@ -25,3 +25,7 @@ run_cmd(commands)
 #cp cemc-rdp.conf ../.config/upstart/cemc-rdp.conf
 commands = ['cp', 'cemc-rdp.conf', '../.config/upstart/cemc-rdp.conf']
 run_cmd(commands)
+
+#sudo reboot
+commands = ['sudo', 'reboot']
+run_cmd(commands)
